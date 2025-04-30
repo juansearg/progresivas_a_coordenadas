@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "Trazaroca",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Haedo - Mármol", "description": "", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "folders": "Ferromapas 1.0.0; Ferrocarriles Argentinos; Ferrocarril Roca; Zona Urbana", "altitude": 0.0, "alt_mode": "", "time_begin": "", "time_end": "", "time_when": "", "board_name": "", "file_name": "", "number_of_replies": "", "post_number": "", "post_text": "", "poster_id": "", "poster_name": "", "subject": "", "tracking_href_2": "" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -58.404565, -34.786878, 0.0 ], [ -58.383640, -34.791410, 0.0 ] ] ] } }
+]
+}

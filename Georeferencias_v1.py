@@ -22,11 +22,9 @@ ramales_inicio_final = pd.DataFrame(data=[
 ], columns=["ramal", "inicio", "final", "archivo"])
 
 # Solicita la ruta del archivo con las posiciones / Ask for input Excel file with positions
-file = input("Ingrese ruta del archivo excel con las posiciones:
-").replace(""", "")
+file = input("Ingrese ruta del archivo excel con las posiciones:\n").replace("\"", "")
 # Solicita la ruta de la carpeta con las trazas en .geojson / Ask for folder containing geojson traces
-trazas = input("Ingrese ruta de los archivos de las trazas:
-").replace(""", "")
+trazas = input("Ingrese ruta de los archivos de las trazas:\n").replace("\"", "")
 
 # Carga el archivo Excel con los puntos a interpolar / Load Excel with kilometer points
 data = pd.read_excel(file)
@@ -42,7 +40,7 @@ for i in data.index:
     final = ramales_inicio_final[ramales_inicio_final["ramal"] == ramal]["final"].item()
 
     # Carga la traza en formato geojson / Load the .geojson trace
-    path_gdf = gpd.read_file(trazas + "\" + archivo + ".geojson")
+    path_gdf = gpd.read_file(trazas + "\\" + archivo + ".geojson")
     line = path_gdf.geometry.iloc[0]  # Se asume una única línea / Assumes a single linear geometry
 
     # Calcula el punto interpolado sobre la traza / Interpolates location along the line
@@ -53,7 +51,7 @@ for i in data.index:
     data.loc[i, "Coordenadas"] = f"{point.y}, {point.x}"
     data.loc[i, "ID"] = i + 1  # Asigna ID único / Assign unique ID
 
-# Asigna identificador por ubicación para Power BI / Group duplicate coordinates under single "Ubicación"
+# Asigna identificador por ubicación para Power BI Iconmap / Group duplicate coordinates under single "Ubicación"
 i = 1
 for coord in data["Coordenadas"].drop_duplicates():
     data.loc[data["Coordenadas"] == coord, "Ubicación"] = i
@@ -61,3 +59,4 @@ for coord in data["Coordenadas"].drop_duplicates():
 
 # Guarda nuevo archivo Excel / Save new Excel file with results
 data.to_excel(str(file[:-5] + "_post.xlsx"), index=False)
+

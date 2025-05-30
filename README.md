@@ -32,7 +32,7 @@ pip install pandas geopandas openpyxl
    - Se genera un archivo Excel nuevo (`*_post.xlsx`) en el mismo directorio del archivo original, con las siguientes columnas completadas:
      - `Coordenadas` (latitud, longitud).
      - `ID` (número secuencial).
-     - `Ubicación` (identificador único por ubicación, necesario para uso en Power BI con el visual IconMap).
+     - `Ubicación` (identificador único por ubicación, necesario para uso en Power BI con el visual [IconMap](https://icon-map.com) (compatible con versiones previas a marzo 2025)).
 
 ## ⚠️ Recomendaciones
 
